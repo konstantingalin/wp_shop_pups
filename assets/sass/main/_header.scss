@@ -1,0 +1,177 @@
+.header {
+  @include adaptive(padding-top, 12, 16);
+  @include adaptive(padding-bottom, 12, 20);
+
+  .top_bar {
+    display: flex;
+    justify-content: space-between;
+
+    &__location {
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 117%;
+        color: #808080;
+        background: url(../public/icons/map_icon.svg) 0 0 no-repeat;
+        @include adaptive(padding-left, 17, 17);
+      }
+    }
+
+    &__menu {
+      ul {
+        display: inline-flex;
+
+        li {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 117%;
+          color: #808080;
+          @include adaptive(margin-right, 12, 40);
+          transition: all 0.6s ease;
+
+          &:hover {
+            color: #3E6480;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .top_content {
+    @include adaptive(margin-top, 12, 18);
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      @include adaptive(margin-right, 12, 40);
+    }
+
+    &__catalog {
+      @include adaptive(margin-right, 12, 24);
+
+      .catalog_button {
+        @include adaptive(padding, 8, 12);
+        @include adaptive(padding-right, 8, 18);
+        display: flex;
+        align-items: center;
+        background: #64B3FB;
+        border-radius: 4px;
+        transition: all 0.6s ease;
+
+        p {
+          @include adaptive(margin-left, 4, 6);
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 100%;
+          color: #FFFFFF;
+        }
+
+        &:hover {
+          background: #4e99df;
+        }
+      }
+    }
+
+    &__search {
+      @include adaptive(margin-right, 12, 64);
+
+      #search {
+        @include adaptive(padding, 8, 12);
+        @include adaptive(padding-left, 8, 20);
+        border: 1px solid #EBEBEB;
+        border-radius: 4px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: #808080;
+        max-width: 314px;
+        width: 314px;
+        outline: none;
+        background: url(../public/icons/search_icon.svg) 96% center no-repeat;
+
+        &::placeholder {
+          color: #c9c9c9;
+        }
+
+        &::-ms-clear,
+        &::-ms-reveal {
+          display: none;
+          width: 0;
+          height: 0;
+        }
+
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+          display: none;
+        }
+      }
+    }
+
+    &__callback {
+      display: flex;
+      align-items: center;
+
+      .phone_number {
+        @include adaptive(margin-right, 12, 24);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 119%;
+        color: #333333;
+      }
+
+      .order_callback {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 100%;
+        color: #7F7F7F;
+        transition: all 0.6s ease;
+
+        &:hover {
+          color: #3E6480;
+        }
+      }
+    }
+
+    &__controlls {
+      display: flex;
+      justify-content: space-between;
+      max-width: 224px;
+      margin-left: auto;
+
+      &__item {
+        @include adaptive(margin-right, 12, 30);
+
+        img {
+          margin: 0 auto;
+          @include adaptive(margin-bottom, 6, 6);
+        }
+
+        p {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 114%;
+          color: #333333;
+          transition: all 0.6s ease;
+
+          &:hover {
+            color: #3E6480;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.advantage {
+  @include adaptive(margin-top, 16, 24);
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    &__item {
+      width: 25%;
+      @include adaptive(margin-right, 16, 80);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      img {
+        margin: 0 auto;
+        margin-bottom: 8px;
+      }
+
+      h4 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: #333333;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 129%;
+        text-align: center;
+        color: #6A6A6A;
+      }
+    }
+  }
+}

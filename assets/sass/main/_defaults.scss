@@ -28,6 +28,7 @@ html.noScroll {
 		padding-right: 15px;
 	}
 }
+
 @media (max-width: 600px) {
 	html.noScroll {
 		body {
@@ -40,6 +41,7 @@ a {
 	text-decoration: none !important;
 	color: inherit;
 }
+
 h1,
 h2,
 h3,
@@ -54,6 +56,7 @@ p {
 	-webkit-font-feature-settings: 'pnum' on, 'lnum' on;
 	font-feature-settings: 'pnum' on, 'lnum' on;
 }
+
 h1 {
 	font-family: var(--font-main);
 	font-weight: 300;
@@ -61,10 +64,12 @@ h1 {
 	line-height: 112%;
 	letter-spacing: -0.6px;
 	color: var(--clr-violet);
+
 	strong {
 		font-weight: 600;
 	}
 }
+
 h2 {
 	font-family: var(--font-main);
 	font-weight: 700;
@@ -73,6 +78,7 @@ h2 {
 	letter-spacing: -0.01em;
 	color: var(--clr-violet);
 }
+
 h3 {
 	font-family: var(--font-main);
 	font-weight: 700;
@@ -80,6 +86,7 @@ h3 {
 	line-height: 100%;
 	letter-spacing: -0.6px;
 }
+
 h4 {
 	font-weight: 600;
 	font-size: var(--fz24);
@@ -88,22 +95,136 @@ h4 {
 	letter-spacing: -0.6px;
 	text-align: center;
 }
+
 sup {
 	font-size: 0.55em;
 	top: -0.65em;
 }
+
 ul {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
 }
+
 li {
 	font-weight: 400;
 	font-size: var(--fz15);
 	line-height: 133%;
 	color: var(--clr-black);
 }
+
 img {
-    max-width: 100%;
-    display: block;
+	max-width: 100%;
+	display: block;
 }
+
+/* Star rating */
+.woostudy-rating {
+	height: 20px;
+}
+
+.woostudy-rating-count,
+.woostudy-rating-not {
+	position: relative;
+	right: -78px;
+	top: -18px;
+	margin-bottom: -18px !important;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 14px;
+	color: #808080;
+}
+
+.woostudy-rating-not {
+	right: 0;
+	top: -4px;
+}
+
+@font-face {
+	font-family: star;
+	src: url(../fonts/star.eot);
+	src: url(../fonts/star.eot?#iefix) format("embedded-opentype"), url(../fonts/star.woff) format("woff"), url(../fonts/star.ttf) format("truetype"), url(../fonts/star.svg#star) format("svg");
+	font-weight: 400;
+	font-style: normal;
+}
+
+.products .product .star-rating {
+	font-size: .857em;
+}
+
+.woocommerce .star-rating {
+	float: right;
+	overflow: hidden;
+	position: relative;
+	height: 1em;
+	line-height: 1;
+	font-size: 1em;
+	width: 5.4em;
+	font-family: star;
+}
+
+.woocommerce .star-rating::before {
+	content: "sssss";
+	color: #d3ced2;
+	float: left;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.woocommerce .star-rating span {
+	overflow: hidden;
+	float: left;
+	top: 0;
+	left: 0;
+	position: absolute;
+	padding-top: 1.5em;
+}
+
+.woocommerce .star-rating span::before {
+	content: "SSSSS";
+	top: 0;
+	position: absolute;
+	left: 0;
+	color: #FFD333;
+}
+
+.woocommerce .woocommerce-product-rating {
+	line-height: 2;
+	display: block;
+}
+
+.woocommerce .woocommerce-product-rating::after,
+.woocommerce .woocommerce-product-rating::before {
+	content: " ";
+	display: table;
+}
+
+.woocommerce .woocommerce-product-rating::after {
+	clear: both;
+}
+
+.woocommerce .woocommerce-product-rating .star-rating {
+	margin: .5em 4px 0 0;
+	float: left;
+}
+
+.woocommerce .products .star-rating {
+	display: block;
+	margin: 0 0 .5em;
+	float: none;
+}
+
+.woocommerce .hreview-aggregate .star-rating {
+	margin: 10px 0 0;
+}
+
+.products .product .star-rating,
+.products .wc-block-grid__product .star-rating,
+.wc-block-grid__products .product .star-rating,
+.wc-block-grid__products .wc-block-grid__product .star-rating {
+	margin: 0;
+}
+
+/* Star rating */

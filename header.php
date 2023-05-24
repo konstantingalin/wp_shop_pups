@@ -39,7 +39,7 @@
             </a>
         </div>
         <div class="top_content__search">
-          <input type="search" name="search" id="search" placeholder="Поиск по магазину">
+          <input type="search" name="search" id="search" autocomplete='off' placeholder="Поиск по магазину">
         </div>
         <div class="top_content__callback">
           <a href="tel:+77053119603" class='phone_number'>+7 (705) 311-96-03</a>

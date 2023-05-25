@@ -60,7 +60,7 @@
         @include adaptive(padding-right, 8, 18);
         display: flex;
         align-items: center;
-        background: #64B3FB;
+        border: 2px #64B3FB solid;
         border-radius: 4px;
         transition: all 0.6s ease;
 
@@ -70,11 +70,38 @@
           font-weight: 500;
           font-size: 14px;
           line-height: 100%;
-          color: #FFFFFF;
+          color: #64B3FB;
+        }
+
+        img {
+          opacity: 0;
+        }
+
+        .normal {
+          opacity: 1;
+        }
+
+        .active {
+          opacity: 0;
+          display: none;
         }
 
         &:hover {
-          background: #4e99df;
+          background: #64B3FB;
+
+          .active {
+            opacity: 1;
+            display: block;
+          }
+
+          p {
+            color: #fff;
+          }
+
+          .normal {
+            opacity: 0;
+            display: none;
+          }
         }
       }
     }

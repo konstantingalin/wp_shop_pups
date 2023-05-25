@@ -34,7 +34,8 @@
         </div>
         <div class="top_content__catalog">
             <a href="<?php echo home_url() . '/shop' ?>" class="button catalog_button">
-              <img src="<?php echo get_template_directory_uri() . '/assets/public/icons/burger_icon.svg' ?>" alt="иконка меню">
+              <img src="<?php echo get_template_directory_uri() . '/assets/public/icons/burger_icon.svg' ?>" alt="иконка меню" class="normal">
+              <img src="<?php echo get_template_directory_uri() . '/assets/public/icons/burger_icon_active.svg' ?>" alt="иконка меню" class="active">
               <p>Каталог товаров</p>
             </a>
         </div>

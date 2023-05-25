@@ -49,8 +49,16 @@
         font-size: 16px;
         line-height: 119%;
         color: #FFFFFF;
-        background: #64B3FB;
         border-radius: 6px;
+
+        border: 2px #fff solid;
+        transition: all 0.6s ease;
+
+        &:hover {
+          background: #64B3FB;
+          border-color: #64B3FB;
+          color: #fff;
+        }
       }
     }
   }

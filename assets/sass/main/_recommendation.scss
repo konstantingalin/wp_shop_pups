@@ -32,10 +32,40 @@
         box-shadow: 0px 8px 56px rgba(0, 0, 0, 0.12);
         border-color: #fff;
         z-index: 100;
+
+        .onsale {
+          @include adaptive(padding, 4, 6);
+          @include adaptive(padding-left, 24, 24);
+          @include adaptive(padding-right, 8, 10);
+          font-size: 12px;
+          width: auto;
+          height: auto;
+        }
       }
 
       &:nth-child(4n) {
-        border: 1px solid #F7F7F7;
+        border-right: 1px solid #F7F7F7;
+      }
+
+      .product_availability {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        @include adaptive(margin-bottom, 8, 14);
+
+        .stock {
+          color: #22A41F;
+        }
+
+        .outofstock {
+          color: #F8552C;
+
+        }
+
+        .onrequest {
+          color: #cc2cf8;
+        }
       }
 
       &__img_box {
@@ -58,8 +88,13 @@
           font-weight: 400;
           font-size: 12px;
           line-height: 14px;
-
           color: #FFFFFF;
+
+          font-size: 0;
+          padding: 0;
+          width: 25px;
+          height: 24px;
+          transition: padding-right 0.6s ease;
         }
 
         img {
@@ -71,7 +106,8 @@
 
       &__info {
         @include adaptive(padding, 12, 16);
-        @include adaptive(padding-bottom, 16, 30);
+        @include adaptive(padding-bottom, 12, 24);
+        margin-bottom: 0;
         border-top: 1px solid #F7F7F7;
         display: flex;
         align-items: flex-start;
@@ -125,7 +161,8 @@
           max-width: 220px;
         }
 
-        .add_to_cart_button {
+        .add_to_cart_button,
+        .product_type_simple {
           display: inline-block;
           @include adaptive(padding, 12, 20);
           @include adaptive(padding-bottom, 8, 10);
@@ -151,6 +188,34 @@
       &__rating {
         max-height: 20px;
         @include adaptive(margin-bottom, 6, 8);
+      }
+    }
+  }
+}
+
+.recommendation2 {
+  .recommendation__items {
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .recommendation__items__item {
+      display: none !important;
+      position: relative;
+      border: 1px solid #F7F7F7;
+      border-right: 0;
+      border-top: 0;
+      width: 25%;
+      transition: box-shadow 0.6s ease;
+
+      &:nth-child(-n+4) {
+        display: block !important;
+        border-top: 1px solid #F7F7F7;
+      }
+
+      &:nth-child(4n) {
+        border-right: 1px solid #F7F7F7;
       }
     }
   }

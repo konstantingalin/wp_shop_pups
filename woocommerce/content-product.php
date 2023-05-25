@@ -44,6 +44,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		 */
 		do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
+		<div class="label"></div>
 	</div> <!-- закрытие recommendation__items__item__img_box --> 
 	<div class="recommendation__items__item__info">
 		<div class="recommendation__items__item__rating">
@@ -71,7 +72,19 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
 	do_action( 'woocommerce_shop_loop_item_title' );
-
+	?> 			
+		<div class="product_availability">
+			<?php 
+					if (get_post_meta(get_the_ID(), '_stock_status', true) == 'outofstock') {
+					echo '<p class="outofstock">Нет в наличии</p>';
+				} else if(get_post_meta(get_the_ID(), '_stock_status', true) == 'instock') {
+					echo '<p class="stock">В наличии</p>';
+				} else {
+					echo '<p class="onrequest">Под заказ</p>';
+				}
+			?>
+		</div>
+	<?php
 	/**
 	 * Hook: woocommerce_after_shop_loop_item.
 	 *

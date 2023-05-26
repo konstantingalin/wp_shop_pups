@@ -19,9 +19,15 @@ function pups_setup() {
 
   register_nav_menus ( 
     array(
-      'top-menu' => 'top_menu__top_bar'
+      'top-menu' => 'top_menu__top_bar',
+      'bottom-menu-1' => 'bottom_menu__menu_1',
+      'bottom-menu-2' => 'bottom_menu__menu_2',
+      'bottom-menu-3' => 'bottom_menu__menu_3',
+      'bottom-menu-4' => 'bottom_menu__menu_4',
     )
   );
 }
 
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
+require_once get_template_directory() . '/inc/cpt.php';
+

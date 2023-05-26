@@ -2,17 +2,47 @@
   width: 100%;
 
   &__content {
+    max-height: 540px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(257.19deg, #FFC2F2 20.13%, #96A7FF 100%);
     @include adaptive(padding, 12, 10);
     @include adaptive(padding-left, 12, 64);
     @include adaptive(padding-right, 12, 50);
+
+  }
+
+  .owl-carousel,
+  .owl-products {
+    position: relative;
+
+    .owl-dots {
+      max-width: 1280px;
+      width: 100%;
+      position: absolute;
+      bottom: 16px;
+      display: flex;
+      justify-content: center;
+
+      .owl-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        margin-right: 8px;
+
+        &.active {
+          background: #fff;
+        }
+      }
+    }
   }
 
   &__text {
     min-height: 540px;
+    max-width: 540px;
     display: flex;
     flex-direction: column;
     justify-content: center;

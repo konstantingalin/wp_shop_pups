@@ -1,0 +1,48 @@
+.shop {
+  @include adaptive(margin-top, 12, 24);
+
+  &__breadcrumb {
+    @include adaptive(margin-bottom, 12, 24);
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #6A6A6A;
+
+    span {
+      color: #D1D1D1;
+    }
+
+    a {
+      transition: all 0.6s ease;
+      color: #D1D1D1;
+
+      &:hover {
+        color: #64B3FB;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__sidebar {
+    min-width: 310px;
+    margin-right: 10px;
+    border: 1px solid #F7F7F7;
+  }
+
+  &__items {
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+
+      .recommendation__items__item {
+        width: 33.33%;
+      }
+    }
+  }
+}

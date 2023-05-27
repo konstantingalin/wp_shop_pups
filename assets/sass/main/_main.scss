@@ -167,6 +167,11 @@
         &_review {
           background-color: #e56fff !important;
         }
+
+        &_default,
+        &_slider {
+          display: none;
+        }
       }
 
       img {

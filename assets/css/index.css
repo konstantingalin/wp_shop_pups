@@ -424,6 +424,9 @@ img {
 .news__items__img .label_review {
   background-color: #e56fff !important;
 }
+.news__items__img .label_default, .news__items__img .label_slider {
+  display: none;
+}
 .news__items__img img {
   width: 100% !important;
 }
@@ -1177,8 +1180,94 @@ img {
 }
 .shop__sidebar {
   min-width: 310px;
+  max-width: 310px;
   margin-right: 10px;
   border: 1px solid #F7F7F7;
+}
+.shop__main {
+  width: 100%;
+}
+.shop__main__info {
+  margin-bottom: clamp(12px, 1.25vw, 24px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.shop__main__info .shop_amount {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.shop__main__info .shop_amount p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #6A6A6A;
+}
+.shop__main__info .shop_sorting {
+  position: relative;
+}
+.shop__main__info .shop_sorting .label {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url(../public/icons/arrow_slider_icon.svg) 0% center no-repeat;
+  background-size: 8px;
+  right: 12px;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(270deg);
+          transform: translateY(-50%) rotate(270deg);
+}
+.shop__main__info .shop_sorting .orderby {
+  cursor: pointer;
+  position: relative;
+  padding: clamp(8px, 0.625vw, 12px);
+  padding-left: clamp(8px, 1.042vw, 20px);
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #808080;
+  max-width: 240px;
+  width: 240px;
+  outline: none;
+  -webkit-appearane: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.shop__main__info .shop_sorting .orderby::-webkit-input-placeholder {
+  color: #c9c9c9;
+}
+.shop__main__info .shop_sorting .orderby::-moz-placeholder {
+  color: #c9c9c9;
+}
+.shop__main__info .shop_sorting .orderby:-ms-input-placeholder {
+  color: #c9c9c9;
+}
+.shop__main__info .shop_sorting .orderby::-ms-input-placeholder {
+  color: #c9c9c9;
+}
+.shop__main__info .shop_sorting .orderby::placeholder {
+  color: #c9c9c9;
+}
+.shop__main__info .shop_sorting .orderby::-ms-clear, .shop__main__info .shop_sorting .orderby::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.shop__main__info .shop_sorting .orderby::-webkit-search-decoration, .shop__main__info .shop_sorting .orderby::-webkit-search-cancel-button, .shop__main__info .shop_sorting .orderby::-webkit-search-results-button, .shop__main__info .shop_sorting .orderby::-webkit-search-results-decoration {
+  display: none;
 }
 .shop__items .products {
   display: -webkit-box;
@@ -1189,4 +1278,51 @@ img {
 }
 .shop__items .products .recommendation__items__item {
   width: 33.33%;
+  border: 1px solid #F7F7F7 !important;
+  border-left: 0 !important;
+}
+.shop__items .products .recommendation__items__item:nth-child(-n+3) {
+  border-top: 1px solid #F7F7F7 !important;
+}
+.shop__items .products .recommendation__items__item:nth-child(3n) {
+  border: 1px solid #F7F7F7 !important;
+}
+.shop__items .products .recommendation__items__item:nth-child(3n-2) {
+  border-left: 1px solid #F7F7F7 !important;
+}
+.shop__items .page-numbers {
+  margin-top: clamp(16px, 1.25vw, 24px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.shop__items .page-numbers li {
+  margin-right: clamp(8px, 0.625vw, 12px);
+}
+.shop__items .page-numbers li a,
+.shop__items .page-numbers li span {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+  color: #6A6A6A !important;
+}
+.shop__items .page-numbers li a:hover, .shop__items .page-numbers li a.current,
+.shop__items .page-numbers li span:hover,
+.shop__items .page-numbers li span.current {
+  color: #64B3FB !important;
+}
+.shop__items .page-numbers li .next,
+.shop__items .page-numbers li .prev {
+  width: 16px;
+  height: 20px;
+  background: url(../public/icons/arrow_slider_icon.svg) center no-repeat;
+  background-size: 12px;
+}
+.shop__items .page-numbers li .next {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }

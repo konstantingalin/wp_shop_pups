@@ -28,6 +28,19 @@ function pups_setup() {
   );
 }
 
+function pups_widgets_init() {
+	register_sidebar(
+		array(
+			'name' => esc_html__( 'Sidebar', 'pups' ),
+			'id' => 'sidebar-1',
+			'description' => esc_html__( 'Add widgets here.', 'pups' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+		)
+	);
+}
+add_action( 'widgets_init', 'pups_widgets_init' );
+
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
 require_once get_template_directory() . '/inc/cpt.php';
 

@@ -93,10 +93,6 @@
           -moz-appearance: none;
           appearance: none;
 
-          &::placeholder {
-            color: #c9c9c9;
-          }
-
           &::-ms-clear,
           &::-ms-reveal {
             display: none;
@@ -173,6 +169,13 @@
           transform: rotate(180deg);
         }
       }
+    }
+
+    .woocommerce-info {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 16px;
+      color: #6A6A6A;
     }
   }
 }

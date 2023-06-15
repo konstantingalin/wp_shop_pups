@@ -3,8 +3,8 @@
 $projectWidth: 1920;
 
 @mixin adaptive($property, $minValue, $maxValue, $breakPoint: $projectWidth) {
-	$min: $minValue +px;
-	$max: $maxValue +px;
+	$min: $minValue + px;
+	$max: $maxValue + px;
 
 	@if ($breakPoint) {
 		$coeff: math.div($breakPoint, 100);

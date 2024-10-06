@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function () {
     var maxHeight = 0;
 
     // Находим самый высокий элемент
-    for (var i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) { 
       var elementHeight = elements[i].offsetHeight;
       if (elementHeight > maxHeight) {
         maxHeight = elementHeight;
@@ -27,6 +27,18 @@ window.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       setMaxHeightByClass('.recommendation2 .recommendation__items__item');
     }, 1000);
+  }
+
+  if(document.querySelector('.owl-product-img')){
+    $('.owl-product-img').owlCarousel({
+      items: 1,
+      loop: false,
+      nav: true,
+      navText: [""],
+      dots: true,
+      autoplay: false,
+      smartSpeed: 800,
+    });
   }
 
   var links = document.getElementsByTagName('a');
@@ -65,4 +77,5 @@ window.addEventListener('DOMContentLoaded', function () {
     autoplay: false,
     smartSpeed: 800,
   });
+
 });

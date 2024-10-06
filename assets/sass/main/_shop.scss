@@ -34,6 +34,51 @@
     max-width: 310px;
     margin-right: 10px;
     border: 1px solid #F7F7F7;
+    @include adaptive(padding, 12, 24);
+
+    .wp-block-heading {
+      color: var(--black, #333);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include adaptive(margin-bottom, 12, 16);
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .wc-block-price-filter__range-input-progress {
+      background-color: #ccc;
+      --track-background: #ccc;
+    }
+
+    .wc-block-components-filter-reset-button, .wc-block-active-filters__clear-all {
+      color: #64B3FB;
+    }
+
+    input[type=checkbox] {
+      outline: none;
+      border: 1px solid #ccc !important;
+      border-radius: 4px;
+      margin-right: 8px !important;
+    }
+
+    .wc-block-components-price-slider  {
+      margin-bottom: 0;
+    }
+
+    .wc-block-price-filter__controls {
+      .wc-block-formatted-money-amount {
+        width: 50% !important;
+        max-width: none;
+        outline: none;
+        resize: none;
+        border: none;
+        border: 1px solid #ccc !important;
+        border-radius: 4px;
+        padding: 12px;
+      }
+    }
   }
 
   &__main {

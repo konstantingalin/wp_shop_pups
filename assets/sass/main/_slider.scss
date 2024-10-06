@@ -3,6 +3,7 @@
 
   &__content {
     max-height: 540px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: 0 center;
     display: flex;
@@ -16,6 +17,7 @@
 
   .owl-carousel,
   .owl-products {
+    padding: 0 !important;
     position: relative;
 
     .owl-dots {

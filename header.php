@@ -19,7 +19,7 @@
       <div class="top_bar">
         <div class="top_bar__location">
           <p class="city">
-            Рудный
+            Костанай
           </p>
         </div>
         <div class="top_bar__menu">

@@ -180,9 +180,9 @@
   <div class="section__content">
     <div class="news__main_text">
       <h4>
-        Новости
+        Блог
       </h4>
-      <a href="<?php echo home_url() . '/news' ?>" class="button">Смотреть все новости</a>
+      <a href="<?php echo home_url() . '/blog' ?>" class="button">Смотреть все</a>
     </div>
     <div class="news__items">
     <?php

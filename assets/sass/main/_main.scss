@@ -18,18 +18,35 @@
       .main_text {
         font-style: normal;
         font-weight: 500;
-        font-size: 48px;
+        @include adaptive(font-size, 32, 48);
         line-height: 104%;
         color: #FFFFFF;
-        @include adaptive(margin-bottom, 12, 18);
+        @include adaptive(margin-bottom, 4, 18);
+        padding-right: 12px;
+        max-width: 300px;
       }
 
       .title_text {
         font-style: normal;
         font-weight: 300;
-        font-size: 24px;
-        line-height: 133%;
+        @include adaptive(font-size, 18, 24);
+        line-height: 123%;
         color: #FFFFFF;
+        padding-right: 12px;
+        max-width: 300px;
+
+      }
+
+      @media (max-width: 480px) {
+        .main_text {
+          @include adaptive(font-size, 20, 48);
+
+        }
+
+        .title_text {
+          @include adaptive(font-size, 14, 24);
+
+        }
       }
     }
   }
@@ -39,13 +56,13 @@
   @include adaptive(padding-top, 16, 64);
 
   &__main_text {
-    @include adaptive(padding-bottom, 12, 40);
+    @include adaptive(padding-bottom, 8, 40);
 
     h4 {
       text-align: left;
       font-style: normal;
       font-weight: 400;
-      font-size: 24px;
+      @include adaptive(font-size, 18, 24);
       line-height: 117%;
       color: #333333;
     }
@@ -66,6 +83,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media (max-width: 640px) {
+        width: 33.33%;
+
+        img {
+          width: 100%;
+          height: auto;
+          @include adaptive(max-width, 120, 138);
+  
+        }
+      }
+
+      @media (max-width: 480px) {
+        width: 50%;
+
+        img {
+          width: 100%;
+          height: auto;
+          max-width: 90px !important;
+  
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        @include adaptive(max-width, 90, 138);
+
+      }
 
       &:nth-child(-n+6) {
         border-top: 1px solid #F7F7F7;
@@ -89,13 +135,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include adaptive(padding-bottom, 12, 32);
+    @include adaptive(padding-bottom, 8, 32);
 
     h4 {
       text-align: left;
       font-style: normal;
       font-weight: 400;
-      font-size: 24px;
+      @include adaptive(font-size, 18, 24);
       line-height: 117%;
       color: #333333;
     }
@@ -124,6 +170,14 @@
   &__items {
     display: flex;
 
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      &__item {
+        width: 100% !important;
+      }
+    }
+
     &__item {
       cursor: pointer;
       border: 1px solid #F7F7F7;
@@ -137,7 +191,15 @@
 
     &__img {
       position: relative;
-      min-height: 300px;
+      @include adaptive(min-height, 100, 300);
+      object-fit: cover;
+      object-position: center;
+
+      img {
+        @include adaptive(max-height, 240, 300);
+        object-fit: cover;
+        object-position: center;
+      }
 
       .label {
         top: 12px;
@@ -197,80 +259,18 @@
     &__main_text {
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
+      @include adaptive(font-size, 16, 18);
       line-height: 133%;
       color: #333333;
-      @include adaptive(padding-bottom, 12, 16);
+      @include adaptive(padding-bottom, 8, 16);
     }
 
     &__title_text {
       font-style: normal;
       font-weight: 300;
-      font-size: 16px;
+      @include adaptive(font-size, 14, 16);
       line-height: 138%;
       color: #808080;
-    }
-  }
-}
-
-.footer {
-  @include adaptive(margin-top, 16, 64);
-  @include adaptive(padding-top, 16, 64);
-  @include adaptive(padding-bottom, 16, 64);
-  background: #F7F7F7;
-
-  &__items {
-    display: flex;
-
-    h3 {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 19px;
-      color: #505050;
-      margin-bottom: 12px;
-    }
-
-    ul {
-      li {
-        margin-bottom: 6px;
-
-        a {
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 16px;
-          color: #757575;
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    .instagram-link {
-      background: url('../public/icons/instagram_icon.png') 0 0 no-repeat !important;
-      padding-left: 24px;
-    }
-
-    &__menu {
-      width: 16%;
-      margin-right: 3%;
-    }
-
-    &__info {
-      width: 16%;
-      margin-right: 3%;
-    }
-
-    &__schedule {
-      width: 16%;
-      margin-right: 7%;
-    }
-
-    &__contacts {
-      width: 21%;
     }
   }
 }

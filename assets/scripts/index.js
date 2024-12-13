@@ -76,6 +76,14 @@ window.addEventListener('DOMContentLoaded', function () {
     dots: true,
     autoplay: false,
     smartSpeed: 800,
-  });
+    responsive: {
+        0: {
+            items: 2 // Для экранов шириной от 0 до 599px
+        },
+        600: {
+            items: 4 // Для экранов шириной от 600px и больше
+        }
+    }
+});
 
 });

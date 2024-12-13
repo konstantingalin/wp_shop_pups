@@ -7,6 +7,7 @@
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
+    @include adaptive(font-size, 12, 14);
     line-height: 16px;
     color: #6A6A6A;
 
@@ -27,22 +28,53 @@
   &__content {
     display: flex;
     align-items: flex-start;
+
+    @media (max-width: 960px) {
+      flex-direction: column !important;
+    }
   }
 
   &__sidebar {
-    min-width: 310px;
-    max-width: 310px;
-    margin-right: 10px;
+    @include adaptive(min-width, 240, 310);
+    @include adaptive(max-width, 240, 310);
+    @include adaptive(margin-right, 4, 10);
     border: 1px solid #F7F7F7;
     @include adaptive(padding, 12, 24);
 
+    @media (max-width: 960px) {
+      min-width: 100%;
+      max-width: 100%;
+      display: flex !important;
+      justify-content: space-between !important;
+      margin-bottom: 16px;
+
+      .wc-blocks-filter-wrapper {
+        @include adaptive(max-width, 140, 300);
+      }
+    }
+    
+    @media (max-width: 560px) {
+      flex-wrap: wrap;
+
+      .widget_block {
+        &:first-child {
+          width: 100% !important;
+        }
+      }
+
+      .wc-blocks-filter-wrapper {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
     .wp-block-heading {
       color: var(--black, #333);
-      font-size: 18px;
+       @include adaptive(font-size, 14, 18);
       font-style: normal;
       font-weight: 500;
       line-height: normal;
-      @include adaptive(margin-bottom, 12, 16);
+      @include adaptive(margin-bottom, 4, 16);
       margin-right: auto;
       text-align: left;
     }
@@ -52,8 +84,34 @@
       --track-background: #ccc;
     }
 
+    .wc-block-components-checkbox__input {
+      min-width: 24px !important;
+      min-height: 24px !important;
+      width: 24px !important;
+      height: 24px !important;
+
+      @media (max-width: 1500px) {
+        min-width: 20px !important;
+        min-height: 20px !important;
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      @media (max-width: 1000px) {
+        min-width: 16px !important;
+        min-height: 16px !important;
+        width: 16px !important;
+        height: 16px !important;
+      }
+    }
+
     .wc-block-components-filter-reset-button, .wc-block-active-filters__clear-all {
       color: #64B3FB;
+    }
+
+    .wc-block-components-checkbox__label {
+      @include adaptive(font-size, 12, 18);
+
     }
 
     input[type=checkbox] {
@@ -77,6 +135,11 @@
         border: 1px solid #ccc !important;
         border-radius: 4px;
         padding: 12px;
+
+        @media (max-width: 960px) {
+          @include adaptive(font-size, 12, 18);
+          @include adaptive(padding, 8, 12);
+        }
       }
     }
   }
@@ -131,8 +194,8 @@
           font-size: 14px;
           line-height: 100%;
           color: #808080;
-          max-width: 240px;
-          width: 240px;
+          @include adaptive(max-width, 180, 240);
+          @include adaptive(width, 180, 240);
           outline: none;
           -webkit-appearane: none;
           -moz-appearance: none;
@@ -176,6 +239,10 @@
 
         &:nth-child(3n-2) {
           border-left: 1px solid #F7F7F7 !important;
+        }
+
+        @media (max-width: 600px) {
+          width: 50%;
         }
       }
     }

@@ -3,16 +3,16 @@
 
   &__content {
     max-height: 540px;
-    background-size: 100% 100%;
+    @include adaptive(max-height, 320, 540);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 center;
+    background-position: right center;
     display: flex;
     align-items: center;
     justify-content: space-between;
     @include adaptive(padding, 12, 10);
     @include adaptive(padding-left, 12, 64);
     @include adaptive(padding-right, 12, 50);
-
   }
 
   .owl-carousel,
@@ -53,7 +53,7 @@
     .main_text {
       font-style: normal;
       font-weight: 500;
-      font-size: 48px;
+      @include adaptive(font-size, 32, 48);
       line-height: 104%;
       color: #FFFFFF;
       @include adaptive(margin-bottom, 12, 18);
@@ -62,7 +62,7 @@
     .title_text {
       font-style: normal;
       font-weight: 300;
-      font-size: 24px;
+      @include adaptive(font-size, 16, 24);
       line-height: 133%;
       color: #FFFFFF;
       @include adaptive(margin-bottom, 16, 24);

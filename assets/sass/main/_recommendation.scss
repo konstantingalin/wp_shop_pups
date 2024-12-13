@@ -1,13 +1,17 @@
 .recommendation {
   @include adaptive(margin-top, 16, 56);
 
+  .owl-nav {
+    display: none !important;
+  }
+
   &__main_text {
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    @include adaptive(font-size, 18, 24);
     line-height: 110%;
     color: #333333;
-    @include adaptive(margin-bottom, 16, 40);
+    @include adaptive(margin-bottom, 12, 40);
   }
 
   &__items {
@@ -24,6 +28,10 @@
       border-top: 0;
       width: 25%;
       transition: box-shadow 0.6s ease;
+
+      @media (max-width: 600px) {
+        width: 50%;
+      }
 
       &:nth-child(-n+4) {
         border-top: 1px solid #F7F7F7;
@@ -70,9 +78,9 @@
       }
 
       &__img_box {
-        @include adaptive(padding, 12, 32);
-        @include adaptive(padding-bottom, 12, 16);
-        @include adaptive(padding-top, 40, 56);
+        @include adaptive(padding, 8, 32);
+        @include adaptive(padding-bottom, 8, 16);
+        @include adaptive(padding-top, 16, 56);
         display: flex;
         justify-content: center;
 
@@ -118,12 +126,12 @@
         .price {
           display: flex;
           flex-direction: column;
-          @include adaptive(margin-bottom, 6, 8);
+          @include adaptive(margin-bottom, 4, 8);
 
           .amount {
             font-style: normal;
             font-weight: 500;
-            font-size: 24px;
+            @include adaptive(font-size, 18, 24);
             line-height: 100%;
             color: #333333;
           }
@@ -135,7 +143,7 @@
           del {
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            @include adaptive(font-size, 14, 16);
             line-height: 110%;
             text-decoration-line: line-through;
             color: #ACACAC;
@@ -143,7 +151,7 @@
             .amount {
               font-style: normal;
               font-weight: 400;
-              font-size: 16px;
+              @include adaptive(font-size, 14, 16);
               line-height: 110%;
               text-decoration-line: line-through;
               color: #ACACAC;
@@ -155,7 +163,7 @@
           display: block;
           font-style: normal;
           font-weight: 400;
-          font-size: 16px;
+          @include adaptive(font-size, 14, 16);
           line-height: 138%;
           color: #6A6A6A;
           @include adaptive(margin-bottom, 8, 12);

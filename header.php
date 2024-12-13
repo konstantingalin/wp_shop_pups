@@ -66,6 +66,11 @@
             <p>Корзина</p>
           </a>
         </div>
+        <div class="top_content__menu">
+            <a href="<?php echo home_url() . '/shop' ?>" class="button catalog_button">
+              <img src="<?php echo get_template_directory_uri() . '/assets/public/icons/burger_icon.svg' ?>" alt="иконка меню" class="normal">
+            </a>
+        </div>
       </div>
     </div>    
   </header>

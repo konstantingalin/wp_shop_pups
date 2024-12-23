@@ -91,6 +91,29 @@ function custom_cross_sell_shortcode( $atts ) {
 }
 add_shortcode( 'cross_sell_products', 'custom_cross_sell_shortcode' );
 
+add_action('woocommerce_before_cart', 'display_cart_unique_items_count');
+
+function display_cart_unique_items_count() {
+    // Получаем уникальное количество товаров в корзине
+    $unique_count = count(WC()->cart->get_cart());
+
+    // Если корзина пуста, ничего не выводим
+    if ($unique_count === 0) {
+        return;
+    }
+
+    // Логика изменения окончания
+    $word = 'товаров'; // По умолчанию "товаров"
+    if ($unique_count % 10 == 1 && $unique_count % 100 != 11) {
+        $word = 'товар';
+    } elseif ($unique_count % 10 >= 2 && $unique_count % 10 <= 4 && ($unique_count % 100 < 10 || $unique_count % 100 >= 20)) {
+        $word = 'товара';
+    }
+
+    // Вывод заголовка
+    echo '<h2>В корзине ' . $unique_count . ' ' . $word . '</h2>';
+}
+
 
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
 require_once get_template_directory() . '/inc/cpt.php';

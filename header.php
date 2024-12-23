@@ -22,6 +22,11 @@
             Костанай
           </p>
         </div>
+        <div class="top_bar__location top_bar__location2">
+          <p class="city">
+            Рудный
+          </p>
+        </div>
         <div class="top_bar__menu">
           <?php 
             wp_nav_menu( 
@@ -49,7 +54,7 @@
           <input type="search" name="search" id="search" autocomplete='off' placeholder="Поиск по магазину">
         </div>
         <div class="top_content__callback">
-          <a href="tel:+77053119603" class='phone_number'>+7 (705) 311-96-03</a>
+          <a href="tel:+77058103180" class='phone_number'>+7 (705) 810-31-80</a>
           <a href="#" class="order_callback">Заказать обратный звонок</a>
         </div>
         <div class="top_content__controlls">

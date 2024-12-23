@@ -121,12 +121,14 @@
       margin-right: 8px !important;
     }
 
+
     .wc-block-components-price-slider  {
       margin-bottom: 0;
     }
 
     .wc-block-price-filter__controls {
       .wc-block-formatted-money-amount {
+        display: inline-block;
         width: 50% !important;
         max-width: none;
         outline: none;
@@ -135,12 +137,18 @@
         border: 1px solid #ccc !important;
         border-radius: 4px;
         padding: 12px;
+        max-width: auto !important;
+        min-width: 50%;
 
         @media (max-width: 960px) {
           @include adaptive(font-size, 12, 18);
           @include adaptive(padding, 8, 12);
         }
       }
+    }
+
+    .wc-block-stock-filter {
+      display: block;
     }
   }
 

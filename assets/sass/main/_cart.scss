@@ -1,0 +1,382 @@
+.cart_page {
+	min-height: 60vh;
+	.woocommerce {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@media (max-width: 740px) {
+			flex-direction: column;
+
+			.cart_page__left {
+				width: 100% !important;
+			}
+
+			.cart_page__right {
+				margin-top: 24px;
+				width: 100% !important;
+				max-width: 400px;
+			}
+		}
+	}
+
+	.cart-empty {
+		align-self: center;
+		min-width: 100%;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.return-to-shop {
+		width: 100%;
+		text-align: center;
+
+		a {
+			color: #64B3FB;
+			@include adaptive(font-size, 16, 18);
+			text-decoration: underline !important;
+		}
+	}
+
+	h2, .cart-empty {
+		width: 100%;
+		font-style: normal;
+		font-weight: 400;
+		@include adaptive(font-size, 18, 24);
+		line-height: 110%;
+		color: #333333;
+		@include adaptive(margin-bottom, 14, 24);
+	}
+
+	.woocommerce-message, .woocommerce-error {
+		width: 100%;
+		font-style: normal;
+		font-weight: 400;
+		@include adaptive(font-size, 14, 16);
+		line-height: 110%;
+		color: rgba(76, 175, 80, 1);
+		@include adaptive(margin-bottom, 12, 16);
+		@include adaptive(margin-right, 12, 16);
+	}
+
+	.woocommerce-error li {
+		color: #F8552C;
+	}
+
+	.product-name {
+		@include adaptive(padding-left, 0, 16);
+	}
+
+	.product-name span {
+		margin-top: 8px;
+		display: inline-block;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		@include adaptive(font-size, 12, 14);
+		line-height: 14px; 
+		@include adaptive(margin-right, 12, 24);
+		
+		&.instock {
+			color: #22A41F;
+		}
+
+		&.outofstock {
+			color: #F8552C;
+
+		}
+
+		&.onbackorder {
+			color: #cc2cf8;
+		}
+
+	}
+
+	.cart_item {
+		display: block;
+		@include adaptive(margin-bottom, 12, 24);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.product-price-p {
+		margin-top: 12px;
+		color: var(--grey_h3, #6A6A6A);
+		@include adaptive(font-size, 12, 16);
+		font-style: normal;
+		font-weight: 300;
+	}
+
+	/* Стили для поля ввода количества */
+	.quantity {
+		@include adaptive(margin-right, 8, 12);
+
+}
+
+.quantity label {
+		display: none; /* Скрыть текстовую метку */
+}
+
+.out-of-stock {
+	color: #F8552C;
+}
+
+.quantity input[type="number"] {
+		width: 90px;
+		@include adaptive(width, 70, 90);
+		padding: 10px;
+		@include adaptive(padding, 6, 10);
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+		outline: none;
+
+		&:focus {
+			border: 1px solid #64B3FB !important;
+			
+		}
+}
+
+.product-subtotal {
+	font-style: normal;
+	font-weight: 500;
+	@include adaptive(font-size, 14, 24);
+	line-height: 100%;
+	color: #333333;
+	@include adaptive(min-width, 60, 100);
+
+}
+
+.product-remove {
+	@include adaptive(padding-left, 6, 16);
+
+	.remove {
+		@include adaptive(width, 16, 20);
+		@include adaptive(height, 16, 20);
+		display: inline-block;
+	}
+}
+
+
+	&__left {
+		width: 70%;
+
+		.button:not(:disabled) {
+			text-align: center !important;
+			background: #64B3FB;
+			border: none;
+			outline: none;
+			@include adaptive(padding, 6, 10);
+			@include adaptive(padding-top, 10, 12);
+			@include adaptive(padding-bottom, 10, 12);
+			border-radius: 4px;
+			transition: all 0.6s ease;
+			font-style: normal;
+			font-weight: 500;
+			@include adaptive(font-size, 14, 16);
+			line-height: 100%;
+			color: #fff;
+		}
+
+
+		.product-thumbnail {
+			img {
+				@include adaptive(max-width, 60, 160);
+				height: auto;
+			}
+		}
+
+		.product-name {
+			width: 100%;
+			font-style: normal;
+			font-weight: 400;
+			@include adaptive(font-size, 14, 20);
+			line-height: 110%;
+			color: #333333;
+			@include adaptive(padding-right, 8, 16);
+		}
+	}
+
+	&__right {
+		align-self: start;
+		width: 28%;
+		border: 1px solid #F7F7F7;
+    @include adaptive(padding, 12, 24);
+
+		.coupon {
+			display: flex;
+
+			input[type="text"] {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				font-size: 16px;
+				outline: none;
+				@include adaptive(font-size, 12, 14);
+
+		
+				&:focus {
+					border: 1px solid #64B3FB !important;
+					
+				}
+			}
+
+			button[type="submit"]  {
+				text-align: center;
+				background: none;
+				outline: none;
+        @include adaptive(padding, 8, 12);
+        @include adaptive(padding-right, 8, 18);
+        border: 2px #64B3FB solid;
+        border-radius: 4px;
+        transition: all 0.6s ease;
+				@include adaptive(margin-left, 4, 6);
+				font-style: normal;
+				font-weight: 500;
+				@include adaptive(font-size, 12, 14);
+				line-height: 100%;
+				color: #64B3FB;
+
+        &:hover {
+          background: #64B3FB;
+          color: #fff;
+        }
+      }
+		}
+
+		h2 {
+			width: 100%;
+			font-style: normal;
+			font-weight: 400;
+			@include adaptive(font-size, 18, 24);
+			line-height: 110%;
+			color: #333333;
+			@include adaptive(margin-bottom, 14, 24);
+			@include adaptive(margin-top, 14, 24);
+		}
+
+		.woocommerce-shipping-totals {
+			vertical-align: baseline;
+
+			td {
+				padding: 16px 0;;
+				padding-left: 8px;
+			}
+
+			strong {
+				font-weight: 500;
+			}
+		}
+
+		th {
+			font-style: normal;
+			font-weight: 400;
+			@include adaptive(font-size, 16, 18);
+			line-height: 110%;
+			color: #333333;
+		}
+
+		.shipping-calculator-button {
+			display: inline-block;
+			padding-top: 8px;
+			color: #64B3FB;
+		}
+
+		.button {
+			text-align: center;
+			display: block;
+			width: 100%;
+			text-align: center !important;
+			background: #64B3FB;
+			border: none;
+			outline: none;
+			@include adaptive(padding, 6, 10);
+			@include adaptive(padding-top, 10, 12);
+			@include adaptive(padding-bottom, 10, 12);
+			border-radius: 4px;
+			transition: all 0.6s ease;
+			font-style: normal;
+			font-weight: 500;
+			@include adaptive(font-size, 14, 16);
+			line-height: 100%;
+			color: #fff;
+		}
+
+		.woocommerce-shipping-calculator {
+			input, select {
+				display: block;
+				width: 100%;
+				padding: 10px;
+				@include adaptive(padding, 6, 10);
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				font-size: 16px;
+				outline: none;
+				margin-bottom: 8px !important;
+
+				&:focus {
+					border: 1px solid #64B3FB !important;
+					
+				}
+			}
+
+			.address-field {
+				margin-top: 8px !important;
+			}
+		}
+
+		.order-total {
+			width: 100%;
+
+			th {
+				font-style: normal;
+				font-weight: 400;
+				@include adaptive(font-size, 18, 24);
+				line-height: 110%;
+				color: #333333;
+			}
+
+			.woocommerce-Price-amount  {
+				font-style: normal;
+				font-weight: 500;
+				@include adaptive(font-size, 20, 32);
+				line-height: 100%;
+				color: #333333;
+				text-align: right;
+			}
+		}
+
+		.wc-proceed-to-checkout {
+			text-align: center !important;
+		}
+	
+		.checkout-button {
+			display: block;
+			width: 100%;
+			text-align: center !important;
+			background: none;
+			outline: none;
+			@include adaptive(padding, 8, 12);
+			@include adaptive(padding-top, 10, 20);
+			@include adaptive(padding-bottom, 10, 20);
+			border: 2px #64B3FB solid;
+			border-radius: 4px;
+			transition: all 0.6s ease;
+			@include adaptive(margin-top, 16, 24);
+			font-style: normal;
+			font-weight: 500;
+			@include adaptive(font-size, 14, 16);
+			line-height: 100%;
+			color: #64B3FB;
+
+        &:hover {
+          background: #64B3FB;
+          color: #fff;
+        }
+		}
+	}
+
+}

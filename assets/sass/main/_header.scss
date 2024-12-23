@@ -21,7 +21,13 @@
       }
     }
 
+    &__location2 {
+      @include adaptive(margin-left, 8, 20);
+      margin-right: auto;
+    }
+
     &__menu {
+      margin-left: auto;
       @media (max-width: 800px) {
         display: none;
       }	
